@@ -1,16 +1,12 @@
+/* eslint-disable no-nested-ternary */
 'use client';
 
-import {
-  FC,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
-import { Chess, Move, PieceSymbol, Square } from 'chess.js';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Chess } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
-import {
+import type { Move, PieceSymbol, Square } from 'chess.js';
+import type { FC, ReactNode } from 'react';
+import type {
   CustomPieceFnArgs,
   CustomPieces,
 } from 'react-chessboard/dist/chessboard/types';
@@ -32,12 +28,12 @@ const pieces = [
 
 export const Game: FC = () => {
   const [game, setGame] = useState(new Chess());
-  const [turn, setTurn] = useState<'w' | 'b'>('w');
+  const [turn, setTurn] = useState<'b' | 'w'>('w');
 
   const customPieces: CustomPieces = useMemo(() => {
     const pieceComponents: Record<
       string,
-      ({ squareWidth }: CustomPieceFnArgs) => JSX.Element
+      ({ squareWidth }: CustomPieceFnArgs) => ReactNode
     > = {};
     pieces.forEach((piece) => {
       pieceComponents[piece] = ({ squareWidth }: CustomPieceFnArgs) => (
@@ -67,7 +63,6 @@ export const Game: FC = () => {
         setGame(gameCopy);
         return newMove;
       } catch (error) {
-        console.error(error);
         return null;
       }
     },
@@ -82,6 +77,7 @@ export const Game: FC = () => {
     const move = safeMove({
       from: sourceSquare,
       to: targetSquare,
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       promotion: (piece[1].toLowerCase() ?? 'q') as PieceSymbol,
     } as Move);
 
@@ -115,6 +111,7 @@ export const Game: FC = () => {
       }, 500);
       return () => clearTimeout(timeout);
     }
+    return undefined;
   }, [game, safeMove, turn]);
 
   return (
@@ -133,14 +130,15 @@ export const Game: FC = () => {
           {game.isCheckmate()
             ? 'Checkmate!'
             : game.isCheck()
-            ? 'Check!'
-            : game.isStalemate()
-            ? 'Stalemate!'
-            : game.isDraw()
-            ? 'Draw!'
-            : ' '}
+              ? 'Check!'
+              : game.isStalemate()
+                ? 'Stalemate!'
+                : game.isDraw()
+                  ? 'Draw!'
+                  : ' '}
         </span>
         <button
+          type="button"
           onClick={handleReset}
           className="p-1 text-sm text-white opacity-50 hover:underline"
         >

@@ -1,9 +1,9 @@
-import { FC, ReactNode } from 'react';
+import { Inter as createInter } from 'next/font/google';
+import type { FC, ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = createInter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Chess',
@@ -11,15 +11,13 @@ export const metadata: Metadata = {
 };
 
 type LayoutProps = {
-  children: ReactNode;
+  readonly children: ReactNode;
 };
 
-const Layout: FC<LayoutProps> = ({ children }) => {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
-};
+const Layout: FC<LayoutProps> = ({ children }) => (
+  <html lang="en">
+    <body className={inter.className}>{children}</body>
+  </html>
+);
 
 export default Layout;

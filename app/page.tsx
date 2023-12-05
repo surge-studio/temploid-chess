@@ -1,12 +1,10 @@
 import { Game } from '@/components/Game';
-import { FC } from 'react';
+import type { FC } from 'react';
 
-const Page: FC = () => {
-  return (
-    <main className="flex items-center justify-center h-full">
-      <Game />
-    </main>
-  );
-};
+const Page: FC = () => (
+  <main className="flex items-center justify-center h-full">
+    <Game />
+  </main>
+);
 
 export default Page;
