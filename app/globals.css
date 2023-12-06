@@ -8,5 +8,5 @@ body {
 }
 
 body {
-  @apply bg-neutral-900;
+  @apply bg-neutral-900 overflow-hidden;
 }
