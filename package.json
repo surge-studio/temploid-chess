@@ -9,25 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "chess.js": "^1.0.0-beta.6",
+    "chess.js": "1.0.0-beta.6",
     "next": "14.0.3",
-    "react": "^18",
+    "react": "^18.2.0",
     "react-chessboard": "^4.3.2",
-    "react-dom": "^18"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
+    "@types/node": "^20.10.3",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8.55.0",
     "eslint-config-harmony": "^3.1.4",
     "eslint-config-next": "14.0.3",
     "jest": "^29.7.0",
-    "postcss": "^8",
+    "postcss": "^8.4.32",
     "prettier": "^3.1.0",
     "stylelint": "^15.11.0",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.3.6",
     "typescript": "^5.3.2"
   },
   "prettier": "eslint-config-harmony/prettier",

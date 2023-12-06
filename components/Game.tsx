@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -114,6 +113,22 @@ export const Game: FC = () => {
     return undefined;
   }, [game, safeMove, turn]);
 
+  const getGameState = () => {
+    if (game.isCheckmate()) {
+      return 'Checkmate!';
+    }
+    if (game.isCheck()) {
+      return 'Check!';
+    }
+    if (game.isStalemate()) {
+      return 'Stalemate!';
+    }
+    if (game.isDraw()) {
+      return 'Draw!';
+    }
+    return ' ';
+  };
+
   return (
     <div>
       <div className="max-w-full w-[320px] h-[320px] bg-neutral-800">
@@ -126,17 +141,7 @@ export const Game: FC = () => {
         />
       </div>
       <div className="flex items-center justify-between">
-        <span className="p-1 text-sm text-white">
-          {game.isCheckmate()
-            ? 'Checkmate!'
-            : game.isCheck()
-              ? 'Check!'
-              : game.isStalemate()
-                ? 'Stalemate!'
-                : game.isDraw()
-                  ? 'Draw!'
-                  : ' '}
-        </span>
+        <span className="p-1 text-sm text-white">{getGameState()}</span>
         <button
           type="button"
           onClick={handleReset}

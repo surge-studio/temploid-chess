@@ -6,33 +6,33 @@ settings:
 
 dependencies:
   chess.js:
-    specifier: ^1.0.0-beta.6
+    specifier: 1.0.0-beta.6
     version: 1.0.0-beta.6
   next:
     specifier: 14.0.3
     version: 14.0.3(@babel/core@7.23.5)(react-dom@18.2.0)(react@18.2.0)
   react:
-    specifier: ^18
+    specifier: ^18.2.0
     version: 18.2.0
   react-chessboard:
     specifier: ^4.3.2
     version: 4.3.2(@types/node@20.10.3)(@types/react@18.2.42)(react-dom@18.2.0)(react@18.2.0)
   react-dom:
-    specifier: ^18
+    specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
 
 devDependencies:
   '@types/node':
-    specifier: ^20
+    specifier: ^20.10.3
     version: 20.10.3
   '@types/react':
-    specifier: ^18
+    specifier: ^18.2.42
     version: 18.2.42
   '@types/react-dom':
-    specifier: ^18
+    specifier: ^18.2.17
     version: 18.2.17
   autoprefixer:
-    specifier: ^10.0.1
+    specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.32)
   eslint:
     specifier: ^8.55.0
@@ -47,7 +47,7 @@ devDependencies:
     specifier: ^29.7.0
     version: 29.7.0(@types/node@20.10.3)
   postcss:
-    specifier: ^8
+    specifier: ^8.4.32
     version: 8.4.32
   prettier:
     specifier: ^3.1.0
@@ -56,7 +56,7 @@ devDependencies:
     specifier: ^15.11.0
     version: 15.11.0(typescript@5.3.2)
   tailwindcss:
-    specifier: ^3.3.0
+    specifier: ^3.3.6
     version: 3.3.6
   typescript:
     specifier: ^5.3.2
@@ -1555,7 +1555,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001566
-      electron-to-chromium: 1.4.603
+      electron-to-chromium: 1.4.605
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
 
@@ -1962,8 +1962,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.603:
-    resolution: {integrity: sha512-Dvo5OGjnl7AZTU632dFJtWj0uJK835eeOVQIuRcmBmsFsTNn3cL05FqOyHAfGQDIoHfLhyJ1Tya3PJ0ceMz54g==}
+  /electron-to-chromium@1.4.605:
+    resolution: {integrity: sha512-V52j+P5z6cdRqTjPR/bYNxx7ETCHIkm5VIGuyCy3CMrfSnbEpIlLnk5oHmZo7gYvDfh2TfHeanB6rawyQ23ktg==}
 
   /emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
@@ -2134,7 +2134,7 @@ packages:
       eslint-plugin-tailwindcss: 3.13.0(tailwindcss@3.3.6)
       eslint-plugin-unused-imports: 3.0.0(@typescript-eslint/eslint-plugin@6.13.2)(eslint@8.55.0)
       prettier: 3.1.0
-      prettier-plugin-tailwindcss: 0.5.7(prettier@3.1.0)
+      prettier-plugin-tailwindcss: 0.5.9(prettier@3.1.0)
       stylelint: 15.11.0(typescript@5.3.2)
       stylelint-config-idiomatic-order: 9.0.0(stylelint@15.11.0)
       stylelint-config-prettier: 9.0.5(stylelint@15.11.0)
@@ -2145,7 +2145,6 @@ packages:
       - '@ianvs/prettier-plugin-sort-imports'
       - '@prettier/plugin-pug'
       - '@shopify/prettier-plugin-liquid'
-      - '@shufo/prettier-plugin-blade'
       - '@trivago/prettier-plugin-sort-imports'
       - '@types/eslint'
       - eslint-import-resolver-node
@@ -4505,14 +4504,13 @@ packages:
       fast-diff: 1.3.0
     dev: true
 
-  /prettier-plugin-tailwindcss@0.5.7(prettier@3.1.0):
-    resolution: {integrity: sha512-4v6uESAgwCni6YF6DwJlRaDjg9Z+al5zM4JfngcazMy4WEf/XkPS5TEQjbD+DZ5iNuG6RrKQLa/HuX2SYzC3kQ==}
+  /prettier-plugin-tailwindcss@0.5.9(prettier@3.1.0):
+    resolution: {integrity: sha512-9x3t1s2Cjbut2QiP+O0mDqV3gLXTe2CgRlQDgucopVkUdw26sQi53p/q4qvGxMLBDfk/dcTV57Aa/zYwz9l8Ew==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
       '@prettier/plugin-pug': '*'
       '@shopify/prettier-plugin-liquid': '*'
-      '@shufo/prettier-plugin-blade': '*'
       '@trivago/prettier-plugin-sort-imports': '*'
       prettier: ^3.0
       prettier-plugin-astro: '*'
@@ -4531,8 +4529,6 @@ packages:
       '@prettier/plugin-pug':
         optional: true
       '@shopify/prettier-plugin-liquid':
-        optional: true
-      '@shufo/prettier-plugin-blade':
         optional: true
       '@trivago/prettier-plugin-sort-imports':
         optional: true
